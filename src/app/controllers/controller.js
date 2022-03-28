@@ -18,4 +18,6 @@ exports.login = (req, res) => {
         username,
         password
     );
+
+    res.redirect("/");
 }
