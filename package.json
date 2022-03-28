@@ -1,0 +1,26 @@
+{
+  "name": "maturita-zkusebni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synekm/Maturita-Zkusebni.git"
+  },
+  "author": "Martin Synek",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/synekm/Maturita-Zkusebni/issues"
+  },
+  "homepage": "https://github.com/synekm/Maturita-Zkusebni#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "simple-json-db": "^2.0.0"
+  }
+}
