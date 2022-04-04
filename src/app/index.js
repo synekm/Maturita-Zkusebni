@@ -9,15 +9,15 @@ const path = require("path");
 const app = express();
 
 //nastaveni session
-app.use('/', session({
-    secret: 'key',
+app.use(session({
+    secret: 'keyboard cat',
     secure: false,
     resave: false,
     saveUninitialized: false,
     cookie: {
         sameSite: true,
         expires: 300000 //60000 = 1 minuta
-    },
+    }
 }));
 
 //nastaveni view enginu na ejs

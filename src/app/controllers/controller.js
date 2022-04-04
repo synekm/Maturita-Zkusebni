@@ -11,13 +11,10 @@ exports.loginPage = (req, res) => {
 
 //funkce login
 exports.login = (req, res) => {
-    let username = req.body.username;
-    let password = req.body.password;
+    req.session.username = req.body.username;
+    req.session.password = req.body.password;
 
-    let login = model.login(
-        username,
-        password
-    );
+    let login = model.login();
 
     if (login == false) {
         console.log("Spatne jmeno nebo heslo")
@@ -35,9 +32,9 @@ exports.registerPage = (req, res) => {
 
 //funkce register
 exports.register = (req, res) => {
-    let username = req.body.username;
+    req.session.username = req.body.username;
     let email = req.body.email;
-    let password = req.body.password
+    let password = req.body.password;
 
     let register = model.register(
         username,

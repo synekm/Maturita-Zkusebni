@@ -9,10 +9,10 @@ const bcrypt = require("bcryptjs");
 const db = new jsondb(path.join(__dirname, "..", "..", "data", "loginInfo.json"));
 
 //funkce login
-exports.login = (username, password) => {
-    if (db.has(username)) {
-        bcrypt.hash(password, 10, (err, hash) => {
-            bcrypt.compare(db.get(username), hash, (err, result) => {
+exports.login = (req, res) => {
+    if (db.has(req.session.username)) {
+        bcrypt.hash(req.session.password, 10, (err, hash) => {
+            bcrypt.compare(db.get(req.session.username), hash, (err, result) => {
                 if (result = true) {
                     return true;
                 } 
@@ -24,14 +24,14 @@ exports.login = (username, password) => {
 }
 
 //funkce register
-exports.register = (username, password, email) => {
-    if (db.has(username)) {
+exports.register = (req, res) => {
+    if (db.has(req.session.username)) {
         return 0;
-    } else if (db.has(email)) {
+    } else if (db.has(req.session.email)) {
         return 1;
     } else {
-        bcrypt.hash(password, 10, (err, hash) => {
-            db.set(username, {hash, email})
+        bcrypt.hash(req.session.password, 10, (err, hash) => {
+            db.set(username, {hash, req.session.email})
             return 2;
         })
     }
