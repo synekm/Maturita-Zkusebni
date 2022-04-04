@@ -5,25 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Registrace</title>
 </head>
 
 <body>
     <!-- hlavicka -->
     <header>
-        <h1>Login</h1>
+        <h1>Registrace</h1>
     </header>
 
     <!-- telo -->
     <main>
-        <form action="/login" method="post">
+        <form action="/register" method="post">
+            <p>E-mailová adresa</p>
+            <input type="text" name="email" required>
             <p>Přihlašovací jméno</p>
             <input type="text" name="username" required>
             <p>Heslo</p>
             <input type="password" name="password" required>
-            <button type="submit">Přihlásit</button>
+            <button type="submit">Registrovat</button>
         </form>
-        <a href="/registerPage">Registrace</a>
+        <a href="/">Login</a>
     </main>
 
     <!-- paticka -->
